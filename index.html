@@ -129,6 +129,33 @@
       background-position: right 1.5rem center;
       padding-right: 3rem;
     }
+
+    /* Infinite Slider Animation */
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .slider-container {
+      overflow: hidden;
+      position: relative;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+
+    .slider-track {
+      display: flex;
+      animation: slide 40s linear infinite;
+      width: fit-content;
+    }
+
+    .slider-track:hover {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-black text-white">
@@ -287,7 +314,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 -mt-12 md:-mt-16 lg:-mt-20">
         <!-- Box 1 -->
         <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl">
-          <img src="./public/Block_1.png" alt="Youniors Academy Fußball Camp" class="w-full h-56 md:h-72 object-cover">
+          <img src="./public/Block_1.png" alt="Youniors Academy Fußball Camp" class="w-full h-48 md:h-56 object-cover">
           <div class="p-4 md:p-6 flex flex-col flex-grow">
             <h3 class="text-black font-bold italic text-lg md:text-xl mb-4 flex-grow text-left">
               Das Youniors Academy Fußball Camp
@@ -302,7 +329,7 @@
 
         <!-- Box 2 -->
         <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl">
-          <img src="./public/Block_2.jpg" alt="Youniors F.C." class="w-full h-56 md:h-72 object-cover">
+          <img src="./public/Block_2.jpg" alt="Youniors F.C." class="w-full h-48 md:h-56 object-cover">
           <div class="p-4 md:p-6 flex flex-col flex-grow">
             <h3 class="text-black font-bold italic text-lg md:text-xl mb-4 flex-grow text-left">
               Das steckt hinter dem Youniors F.C.
@@ -317,7 +344,7 @@
 
         <!-- Box 3 -->
         <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl">
-          <img src="./public/Block_3.webp" alt="Youniors Community" class="w-full h-56 md:h-72 object-cover">
+          <img src="./public/Block_3.webp" alt="Youniors Community" class="w-full h-48 md:h-56 object-cover">
           <div class="p-4 md:p-6 flex flex-col flex-grow">
             <h3 class="text-black font-bold italic text-lg md:text-xl mb-4 flex-grow text-left">
               Erfahre mehr über die Youniors Community
@@ -625,6 +652,147 @@
           </button>
         </div>
       </form>
+    </div>
+  </section>
+
+  <!-- Community & Presse Section -->
+  <section class="relative py-24 md:py-32 lg:py-40 overflow-hidden" style="background-image: url('./public/Block_10.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Dunkler transparenter Layer -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    
+    <div class="max-w-4xl mx-0 px-6 md:px-12 lg:px-16 relative z-10 text-left">
+      <!-- Überschrift -->
+      <h2 class="text-white font-bold text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6">
+        Das sagen Community & Presse
+      </h2>
+
+      <!-- Beschreibungstext -->
+      <p class="text-white font-normal text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed">
+        Werde Teil der Youniors Academy und schreibe die Erfolgsgeschichte mit uns weiter.
+      </p>
+
+      <!-- Button -->
+      <div class="flex justify-start mb-12 md:mb-16">
+        <button class="text-white px-6 py-3 rounded-full font-semibold text-sm md:text-base transition-colors flex items-center justify-center gap-2 whitespace-nowrap" style="background-color: #FFFFFF36;">
+          Werde Teil der Community
+        </button>
+      </div>
+    </div>
+
+    <!-- Slider - Volle Breite -->
+    <div class="slider-container w-full relative z-10 mt-12 md:mt-16">
+        <div class="slider-track">
+          <!-- Erste Reihe (wird dupliziert für nahtlose Animation) -->
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/Bild.png" alt="Bild" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                Bild - Kings League: Gerard Piqué testet neuen Turnier-Modus mit deutschem Team
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/GMX.png" alt="GMX" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                GMX - "Kings League": Wie eine Internet Liga von Gerard Piqué für Furore sorgt
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/Kicker.png" alt="Kicker" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                Kicker - Mit Würfeln und doppelten Toren: Wie Piqués Kings League den Fußball neu erfindet.
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/SPOX.png" alt="SPOX" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                SPOX - Ausverkauftes Camp Nou! Piqués Kings League sorgt für ein Spektakel.
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/tz.png" alt="TZ" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                TZ - Die Zukunft? Piqués neuartzige Fußball-Abwandlung füllt Camp Nou mit 92.522 Zuschauern.
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/Zeit.png" alt="Zeit" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                Zeit - Die TikTokisierung des Fußballs: Piqué will den Fußball für die Generation TikTok neu erfinden.
+              </h3>
+            </div>
+          </div>
+
+          <!-- Duplikat für nahtlose Animation -->
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/Bild.png" alt="Bild" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                Bild - Kings League: Gerard Piqué testet neuen Turnier-Modus mit deutschem Team
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/GMX.png" alt="GMX" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                GMX - "Kings League": Wie eine Internet Liga von Gerard Piqué für Furore sorgt
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/Kicker.png" alt="Kicker" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                Kicker - Mit Würfeln und doppelten Toren: Wie Piqués Kings League den Fußball neu erfindet.
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/SPOX.png" alt="SPOX" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                SPOX - Ausverkauftes Camp Nou! Piqués Kings League sorgt für ein Spektakel.
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/tz.png" alt="TZ" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                TZ - Die Zukunft? Piqués neuartzige Fußball-Abwandlung füllt Camp Nou mit 92.522 Zuschauern.
+              </h3>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl mr-6 md:mr-8 flex-shrink-0" style="width: 400px;">
+            <img src="./public/Press_2/Zeit.png" alt="Zeit" class="w-full h-48 md:h-56 object-cover">
+            <div class="p-4 md:p-6 flex flex-col flex-grow">
+              <h3 class="text-black font-bold text-lg md:text-xl mb-4 flex-grow text-left">
+                Zeit - Die TikTokisierung des Fußballs: Piqué will den Fußball für die Generation TikTok neu erfinden.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
