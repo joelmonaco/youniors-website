@@ -1,0 +1,13 @@
+{
+  "name": "youniors-website",
+  "version": "1.0.0",
+  "description": "Youniors Website",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": ["youniors", "website"],
+  "author": "",
+  "license": "ISC"
+}
+
