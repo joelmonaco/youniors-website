@@ -84,6 +84,43 @@
         clip-path: inset(0 0% 0 0);
       }
     }
+
+    /* FAQ Animation */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+      opacity: 0;
+      margin-top: 0;
+    }
+
+    .faq-answer.open {
+      max-height: 1000px;
+      opacity: 1;
+      margin-top: 0.75rem;
+    }
+
+    /* Fußballcamp Unterstreichung Animation */
+    .fussballcamp-highlight {
+      position: relative;
+      display: inline-block;
+    }
+
+    .fussballcamp-highlight::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.15em;
+      width: 100%;
+      height: 0.35em;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 25' preserveAspectRatio='none'%3E%3Cpath d='M0,15 Q100,5 200,15' stroke='%23CC6B84' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
+      background-size: 100% 100%;
+      clip-path: inset(0 100% 0 0);
+    }
+
+    .fussballcamp-highlight.animate::after {
+      animation: underlineAnimation 0.5s ease-out 0.2s forwards;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-black text-white">
@@ -130,7 +167,7 @@
         <!-- Hauptüberschrift -->
         <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-white leading-relaxed mb-8 md:mb-12" style="text-transform: none; font-family: 'Suisse Intl', sans-serif;">
           Zeig was<br><span class="du-highlight">DU</span> kannst!
-        </h1>
+      </h1>
 
         <!-- Social Media Icons -->
         <div class="flex items-center gap-6 md:gap-8 mb-6 md:mb-8">
@@ -283,10 +320,93 @@
             </a>
           </div>
         </div>
-      </div>
+    </div>
+  </div>
+    
+    <!-- Text und Button -->
+    <div class="text-center mt-12 md:mt-16 mb-4 px-6 md:px-12 lg:px-16">
+      <p class="text-white font-bold text-xl md:text-2xl lg:text-3xl mb-6 md:mb-8">
+        Sichere dir jetzt einen der limitierten Plätze und melde dich für die Youniors Academy Fußball-Camps in den Osterferien an.
+      </p>
+      <a href="#anmelden" class="bg-[#CC6B84] hover:bg-[#b55a72] text-white px-8 py-4 rounded-full font-bold text-base md:text-lg transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap">
+        Jetzt anmelden
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
+      </a>
     </div>
     <!-- Schwarzer Hintergrund beginnt nach den Kästen -->
-    <div class="bg-black py-24 md:py-32 lg:py-40 -mt-6 md:-mt-8"></div>
+    <div class="bg-black py-8 md:py-12 lg:py-16 -mt-6 md:-mt-8"></div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16" style="background-color: #F7EEF1;">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-black font-bold text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8">
+        Die wichtigsten Infos zum <span class="fussballcamp-highlight">Fußballcamp</span>
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start">
+        <!-- Linke Seite - FAQ Box -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg lg:col-span-2">
+          <!-- FAQ 1 -->
+          <div class="faq-item bg-gray-100 rounded-2xl p-4 md:p-5 mb-4">
+            <button class="faq-question w-full text-left flex items-center justify-between py-2 font-bold text-lg md:text-xl text-black hover:text-[#CC6B84] transition-colors">
+              <span>Q. Wer kann an den Camps teilnehmen?</span>
+              <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer text-gray-700 text-base md:text-lg leading-relaxed">
+              Alle fußballbegeisterten Kinder und Jugendliche zwischen 6 und 16 Jahren, egal ob Feldspieler:in oder Torhüter:in, sind herzlich willkommen. Die Camps sind für alle Leistungsniveaus geeignet. Die jeweilige Altersgruppe ist bei der Anmeldung ersichtlich.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item bg-gray-100 rounded-2xl p-4 md:p-5 mb-4">
+            <button class="faq-question w-full text-left flex items-center justify-between py-2 font-bold text-lg md:text-xl text-black hover:text-[#CC6B84] transition-colors">
+              <span>Q. Was ist im Camp inklusive?</span>
+              <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer text-gray-700 text-base md:text-lg leading-relaxed">
+              Das Camp umfasst fünf Tage intensives Fußballtraining, geleitet von erfahrenen und lizensierten Jugendtrainern und ehemaligen Bundesliga-Profis. Im Preis inbegriffen sind eine komplette Ausstattung bestehend aus Trikot, Hose, Trinkflasche und Ball. Darüber hinaus gibt es täglich ein kindgerechtes und gesundes Mittagessen, sowie eine Rundumversorgung mit Snacks und Getränken.<br><br>Dich erwartet ein spektakuläres Mittagsprogramm und die einmalige Chance bei einem Videodreh von Younes Zarou, einem der weltweit größten Content Creator mitzuwirken.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item bg-gray-100 rounded-2xl p-4 md:p-5 mb-4">
+            <button class="faq-question w-full text-left flex items-center justify-between py-2 font-bold text-lg md:text-xl text-black hover:text-[#CC6B84] transition-colors">
+              <span>Q. Wo finden die Camps statt?</span>
+              <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer text-gray-700 text-base md:text-lg leading-relaxed">
+              Die Camps finden international wechselweise an unterschiedlichen Standorten statt.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item bg-gray-100 rounded-2xl p-4 md:p-5 mb-4">
+            <button class="faq-question w-full text-left flex items-center justify-between py-2 font-bold text-lg md:text-xl text-black hover:text-[#CC6B84] transition-colors">
+              <span>Q. Gibt es besondere Highlights?</span>
+              <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer text-gray-700 text-base md:text-lg leading-relaxed">
+              Die Camps werden durch viele besondere Highlights ergänzt. Und besonders spannend: Younes Zarou, Präsident des ersten deutschen Kings League Vereins Youniors F.C. wird während des Camps ebenfalls anwesend sein.
+            </div>
+          </div>
+        </div>
+
+        <!-- Rechte Seite - Bild -->
+        <div class="lg:sticky lg:top-8 lg:col-span-1 flex justify-center lg:justify-start">
+          <img src="./public/Block_4.jpg" alt="Youniors Camp" class="w-full max-w-xs lg:max-w-sm h-auto rounded-3xl shadow-2xl object-cover">
+        </div>
+      </div>
+    </div>
   </section>
 
   <script>
@@ -312,6 +432,54 @@
           console.log('Autoplay wurde verhindert:', err);
         });
       });
+    }
+
+    // FAQ Aufklapp-Funktionalität mit Animation
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const icon = faqItem.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+        
+        // Schließe alle anderen FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            const otherAnswer = item.querySelector('.faq-answer');
+            const otherIcon = item.querySelector('.faq-icon');
+            otherAnswer.classList.remove('open');
+            otherIcon.classList.remove('rotate-180');
+          }
+        });
+        
+        // Toggle aktuelles FAQ
+        if (isOpen) {
+          answer.classList.remove('open');
+          icon.classList.remove('rotate-180');
+        } else {
+          answer.classList.add('open');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Fußballcamp Umkreisungs-Animation beim Scrollen
+    const fussballcampHighlight = document.querySelector('.fussballcamp-highlight');
+    const faqSection = document.querySelector('section[style*="background-color: #F7EEF1"]');
+    
+    if (fussballcampHighlight && faqSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            fussballcampHighlight.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+      
+      observer.observe(faqSection);
     }
   </script>
 
