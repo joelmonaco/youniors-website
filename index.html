@@ -53,16 +53,52 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-black text-white flex items-center justify-center">
+<body class="min-h-screen bg-black text-white">
   
+  <!-- Header Bar -->
+  <header class="bg-black py-4 px-6 md:px-12 fixed top-0 left-0 right-0 z-50 border-b border-gray-900">
+    <nav class="flex items-center justify-between max-w-[1400px] mx-auto">
+      <!-- Logo -->
+      <div class="flex items-center gap-8">
+        <img src="./public/Logo-scaled.png" alt="Youniors Logo" class="h-10 md:h-12">
+        
+        <!-- Navigation Links -->
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8">
+          <li>
+            <a href="#faq" class="text-white hover:text-gray-300 transition-colors font-medium text-base">
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="#ueber-uns" class="text-white hover:text-gray-300 transition-colors font-medium text-base">
+              Über uns
+            </a>
+          </li>
+          <li>
+            <a href="#community" class="text-white hover:text-gray-300 transition-colors font-medium text-base">
+              Community
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA Button -->
+      <a href="#anmelden" class="bg-[#CC6B84] hover:bg-[#b55a72] text-white px-6 py-2.5 rounded-full font-semibold text-base transition-colors whitespace-nowrap">
+        Jetzt anmelden
+      </a>
+    </nav>
+  </header>
+
   <!-- Main Content -->
-  <div class="text-center px-8">
-    <h1 class="font-bold mb-8 headline-vanguard text-[5rem] md:text-[8rem] lg:text-[12rem] leading-[1.05] text-white tracking-[0.005em]">
-      YOUNIORS
-    </h1>
-    <p class="text-xl md:text-2xl font-normal leading-relaxed text-white max-w-2xl mx-auto">
-      Bald geht es hier los.
-    </p>
+  <div class="min-h-screen flex items-center justify-center px-8 pt-24">
+    <div class="text-center">
+      <h1 class="font-bold mb-8 headline-vanguard text-[5rem] md:text-[8rem] lg:text-[12rem] leading-[1.05] text-white tracking-[0.005em]">
+        YOUNIORS
+      </h1>
+      <p class="text-xl md:text-2xl font-normal leading-relaxed text-white max-w-2xl mx-auto">
+        Bald geht es hier los.
+      </p>
+    </div>
   </div>
 
 </body>
